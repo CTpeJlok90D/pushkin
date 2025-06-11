@@ -55,8 +55,8 @@ public class PageLoader : MonoBehaviour
             AsyncOperationHandle<Page> handle = Addressables.LoadAssetAsync<Page>(variable);
             handle.Completed += (handle) =>
             {
-                pageObject.Init(handle.Result, this);
                 _pageLoadingCount -= 1;
+                pageObject.Init(handle.Result, this);
             };
         }
     }

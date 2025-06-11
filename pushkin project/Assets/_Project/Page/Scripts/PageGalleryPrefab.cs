@@ -1,6 +1,4 @@
-using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class PageGalleryPrefab : MonoBehaviour
@@ -34,6 +32,5 @@ public class PageGalleryPrefab : MonoBehaviour
         
         image.sprite = pageObject.Image;
         image.rectTransform.sizeDelta = resultSize;
-        image.DOColor(new(1, 1, 1, 1), 0.5f);
     }
 }

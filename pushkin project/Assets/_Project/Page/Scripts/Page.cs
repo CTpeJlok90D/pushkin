@@ -27,10 +27,18 @@ public class Page : ScriptableObject
     [field: DisplayName("Год написания")]
     [field: SerializeField] public int BornDate { get; private set; } = 1900;
     
-    [field: Tooltip("Подпись, которая будет при открытии окна")]
-    [field: DisplayName("Подпись")]
-    [field: SerializeField] public string Signature { get; private set; }
-    
-    [field: SerializeField] public SerializedDictionary<string, AssetReferenceT<Page>> links;
-    public IReadOnlyDictionary<string, AssetReferenceT<Page>> Links => links;
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (Image == null)
+        {
+            Debug.LogError($"<color=red>[Page filling error]</color> Image for {this} page was not found", this);
+        }
+
+        if (Author == null)
+        {
+            Debug.LogError($"<color=red>[Page filling error]</color> Author for {this} page was not found", this);
+        }
+    }
+#endif
 }

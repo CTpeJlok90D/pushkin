@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class PageUI : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _pageName;
     [SerializeField] private Image _image;
     [SerializeField] private Image _imageMask;
     [SerializeField] private Button _closeButton;
@@ -34,7 +33,6 @@ public class PageUI : MonoBehaviour
     {
         _page = page;
         _image.sprite = _page.Image;
-        _pageName.text = _page.Name;
         _image.sprite = _page.Image;
         
         InitSize();
@@ -50,7 +48,7 @@ public class PageUI : MonoBehaviour
         }
         else
         {
-            _author.text = $"{_page.Author.Name}  {_page.BornDate}г."; 
+            _author.text = $"{_page.Name}, {_page.Author.Name}  {_page.BornDate}г."; 
         }
         
         gameObject.SetActive(true);
