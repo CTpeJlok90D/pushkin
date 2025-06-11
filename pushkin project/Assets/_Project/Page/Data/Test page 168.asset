@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5037d6fa9c23b64ca359a96011468f9, type: 3}
+  m_Name: Test page 168
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: "\"\u041F\u0443\u0448\u043A\u0438\u043D \u043D\u0430 \u043D\u0430\u0431\u0435\u0440\u0435\u0436\u043D\u043E\u0439\", "
+  <Description>k__BackingField: "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435
+    \u043E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 2"
+  <Image>k__BackingField: {fileID: 21300000, guid: e4fecdcf113eff44896d7100ddf9a91d, type: 3}
+  <Author>k__BackingField: {fileID: 11400000, guid: 8a51efa4ce9a98744ba318895b3b6b49, type: 2}
+  <BornDate>k__BackingField: 1937
+  <Signature>k__BackingField: 
+  links:
+    _serializedList: []

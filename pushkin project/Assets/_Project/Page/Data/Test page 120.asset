@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5037d6fa9c23b64ca359a96011468f9, type: 3}
+  m_Name: Test page 120
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: "\"\u041F\u0443\u0448\u043A\u0438\u043D \u0443 \u041B\u0443\u043A\u043E\u043C\u043E\u0440\u044C\u044F\",
+    \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u044F \u043A \u043F\u0440\u043E\u043B\u043E\u0433\u0443
+    \"\u0420\u0443\u0441\u043B\u0430\u043D\u0430 \u0438 \u041B\u044E\u0434\u043C\u0438\u043B\u044B\", "
+  <Description>k__BackingField: "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435
+    \u043E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 2"
+  <Image>k__BackingField: {fileID: 21300000, guid: 9545116ed72682b4f9c87d1f89366bb3, type: 3}
+  <Author>k__BackingField: {fileID: 11400000, guid: c41f915ac6fcd074fb69b56abe836674, type: 2}
+  <BornDate>k__BackingField: 1879
+  <Signature>k__BackingField: 
+  links:
+    _serializedList: []
