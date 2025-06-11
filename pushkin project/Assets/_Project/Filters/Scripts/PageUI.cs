@@ -48,7 +48,7 @@ public class PageUI : MonoBehaviour
         }
         else
         {
-            _author.text = $"{_page.Name}, {_page.Author.Name}  {_page.BornDate}г."; 
+            _author.text = $"{_page.Author.Name} {_page.Name} {_page.BornDate}г."; 
         }
         
         gameObject.SetActive(true);
