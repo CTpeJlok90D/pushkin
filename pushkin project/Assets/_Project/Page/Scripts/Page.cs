@@ -27,6 +27,14 @@ public class Page : ScriptableObject
     [field: DisplayName("Год написания")]
     [field: SerializeField] public int BornDate { get; private set; } = 1900;
     
+    public bool IsValid 
+    {
+        get
+        {
+            return Image != null && Author != null;
+        }
+    }
+    
 #if UNITY_EDITOR
     private void OnValidate()
     {

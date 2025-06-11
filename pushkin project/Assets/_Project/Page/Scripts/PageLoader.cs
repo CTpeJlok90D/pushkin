@@ -18,6 +18,8 @@ public class PageLoader : MonoBehaviour
 
     private int _pageLoadingCount = int.MaxValue;
     
+    private string _searchString = "";
+    
     public Filters Filters
     {
         get
@@ -28,13 +30,34 @@ public class PageLoader : MonoBehaviour
         {
             _filters = value;
 
-            foreach (PageGalleryPrefab galleryPrefab in _pages)
-            {
-                Page page = galleryPrefab.Page;
-                bool isUnderFilter = (_filters.Authors.Contains(page.Author) || _filters.Authors.Count == 0) && 
-                                     page.BornDate <= _filters.MaxDateTime && page.BornDate >=  _filters.MinDateTime;
-                galleryPrefab.gameObject.SetActive(isUnderFilter);
-            }
+            FilterPages();
+        }
+    }
+
+    public string SearchString
+    {
+        get
+        {
+            return _searchString;
+        }
+        set
+        {
+            _searchString = value;
+            
+            FilterPages();
+        }
+    }
+
+    private void FilterPages()
+    {
+        foreach (PageGalleryPrefab galleryPrefab in _pages)
+        {
+            Page page = galleryPrefab.Page;
+            bool isUnderFilter = page.IsValid && (_filters.Authors.Contains(page.Author) || _filters.Authors.Count == 0) && 
+                                 page.BornDate <= _filters.MaxDateTime && page.BornDate >=  _filters.MinDateTime
+                                 && (string.IsNullOrEmpty(SearchString) || page.Author.Name.Contains(SearchString) || page.Name.Contains(SearchString));
+            
+            galleryPrefab.gameObject.SetActive(isUnderFilter);
         }
     }
     

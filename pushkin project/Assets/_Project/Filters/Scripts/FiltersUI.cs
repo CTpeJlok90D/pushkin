@@ -11,6 +11,7 @@ public class FiltersUI : MonoBehaviour
 {
     [field: SerializeField] private UIRangeSlider _yearsSlider;
     [field: SerializeField] private TMP_Dropdown _authorDropdown;
+    [field: SerializeField] private TMP_InputField _searchInput;
     [field: SerializeField] private Author _anyAuthor;
     [field: SerializeField] private AssetLabelReference _authorsLabel;
     [field: SerializeField] private PageLoader _pageLoader;
@@ -29,12 +30,19 @@ public class FiltersUI : MonoBehaviour
     {
         _yearsSlider.onValuesChanged.AddListener(OnDateRangeChange);
         _authorDropdown.onValueChanged.AddListener(OnAuthorChange);
+        _searchInput.onValueChanged.AddListener(OnSearchChange);
     }
 
     private void OnDisable()
     {
         _yearsSlider.onValuesChanged.RemoveListener(OnDateRangeChange);
         _authorDropdown.onValueChanged.RemoveListener(OnAuthorChange);
+        _searchInput.onValueChanged.RemoveListener(OnSearchChange);
+    }
+
+    private void OnSearchChange(string searchText)
+    {
+        _pageLoader.SearchString = searchText;
     }
 
     private void OnAuthorChange(int index)
