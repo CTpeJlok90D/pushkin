@@ -1385,7 +1385,7 @@ GameObject:
   - component: {fileID: 196657224}
   - component: {fileID: 196657223}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Reference text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4871,7 +4871,7 @@ GameObject:
   - component: {fileID: 1129362715}
   - component: {fileID: 1129362714}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Copyright text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5007,7 +5007,7 @@ GameObject:
   - component: {fileID: 1147597889}
   - component: {fileID: 1147597888}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Top text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
