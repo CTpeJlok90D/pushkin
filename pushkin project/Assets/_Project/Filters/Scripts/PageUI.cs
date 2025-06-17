@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class PageUI : MonoBehaviour
@@ -13,7 +14,7 @@ public class PageUI : MonoBehaviour
     [SerializeField] private Button _nextButton;
     [SerializeField] private Button _previewButton;
     
-    private Page _page;
+    public Page Page { get; private set; }
     private PageLoader _pageLoader;
     private Page[] _activePages;
     private int _index;
@@ -31,9 +32,9 @@ public class PageUI : MonoBehaviour
     
     private void Init(Page page)
     {
-        _page = page;
-        _image.sprite = _page.Image;
-        _image.sprite = _page.Image;
+        Page = page;
+        _image.sprite = Page.Image;
+        _image.sprite = Page.Image;
         
         InitSize();
         InitButtons();
@@ -41,20 +42,20 @@ public class PageUI : MonoBehaviour
 
     private void InitSize()
     {
-        if (_page.Author == null)
+        if (Page.Author == null)
         {
-            Debug.LogError($"[<color=yellow>ОШИБКА ЗАПОЛНЕНИЯ КАРТИН</color>] Автор картины {_page} не найден", _page);
-            _author.text = $"Автор неизвестен  {_page.BornDate}г.";
+            Debug.LogError($"[<color=yellow>ОШИБКА ЗАПОЛНЕНИЯ КАРТИН</color>] Автор картины {Page} не найден", Page);
+            _author.text = $"Автор неизвестен  {Page.BornDate}г.";
         }
         else
         {
-            _author.text = $"{_page.Author.Name} {_page.Name} {_page.BornDate}г."; 
+            _author.text = $"{Page.Author.Name} {Page.Name} {Page.BornDate}г."; 
         }
         
         gameObject.SetActive(true);
         
-        int imageWight = _page.Image.texture.width;
-        int imageHeight = _page.Image.texture.height;
+        int imageWight = Page.Image.texture.width;
+        int imageHeight = Page.Image.texture.height;
         
         Vector2 resultSize = new Vector2(750, 750);
 
@@ -74,7 +75,7 @@ public class PageUI : MonoBehaviour
     private void InitButtons()
     {
         _activePages = _pageLoader.Pages.Where(x => x.gameObject.activeInHierarchy).Select(x => x.Page).ToArray();
-        _index = Array.IndexOf(_activePages, _page);
+        _index = Array.IndexOf(_activePages, Page);
         
         _nextButton.interactable = _index != _activePages.Length - 1;
         _previewButton.interactable = _index != 0;
